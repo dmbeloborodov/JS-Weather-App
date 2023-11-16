@@ -1,40 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-    <div class="app">
-        <form action="" class="form">
-            <input type="text" class="form__input">
-            <button class="form__btn"></button>
-        </form>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main class="weather">
+      <form action="" class="form">
+        <input type="text" class="form__input" />
+        <button class="form__btn"></button>
+      </form>
 
-        <img src="./img/weather/cloudy.svg" alt="weather" class="weather__img">
-        
-        <div class="wether__temp">22ºc</div>
-        <div class="wether__city">New York</div>
+      <img src="./img/weather/cloudy.svg" alt="weather" class="weather__img" />
 
-        <section class="wether__details">
-            <section class="details">
-                <img src="./img/ui/humidity.svg" alt="Humidity" class="details__img">
-                <div class="details__value">55%</div>
-                <div class="details__title">Humidity</div>
-            </section>
+      <div class="weather__temp">22ºc</div>
+      <div class="weather__city">New York</div>
 
-
-            <section class="details">
-                <img src="./img/ui/wind-speed.svg" alt="Wind Speed" class="details__img">
-                <div class="details__value">10 km/h</div>
-                <div class="details__title">Wind Speed</div>
-            </section>
-
+      <section class="weather__details">
+        <section class="details">
+          <img src="./img/ui/humidity.svg" alt="Humidity" class="details__img" />
+          <div class="details__value">55%</div>
+          <div class="details__title">Humidity</div>
         </section>
 
-    </div>
+        <section class="details">
+          <img src="./img/ui/wind-speed.svg" alt="Wind Speed" class="details__img" />
+          <div class="details__value">10 km/h</div>
+          <div class="details__title">Wind Speed</div>
+        </section>
+      </section>
+    </main>
     <script src="./js/mian.js"></script>
-</body>
+  </body>
 </html>
