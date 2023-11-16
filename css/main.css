@@ -41,3 +41,33 @@ body {
 .form__btn {
   padding: 0 10px;
 }
+
+.weather__info {
+  padding-top: 10px;
+  padding-bottom: 60px;
+  text-align: center;
+}
+
+.weather__img {
+  width: 128px;
+}
+
+.weather__temp {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.weather__city {
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
