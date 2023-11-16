@@ -1,1 +1,43 @@
-@import './reset.css'
+@import "./reset.css";
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900);
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #282828;
+}
+
+.weather {
+  width: 320px;
+  border-radius: 16px;
+  background: linear-gradient(167deg, #42d2a6 4.7%, #007991 95.98%), #389196;
+}
+
+.form {
+  margin: 30px 20px 10px;
+  height: 40px;
+
+  display: flex;
+  align-items: stretch;
+  border-radius: 60px;
+  background-color: #fff;
+}
+
+.form__input {
+  flex-grow: 1;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.form__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form__btn {
+  padding: 0 10px;
+}
