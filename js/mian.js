@@ -13,7 +13,10 @@ async function submitHeander(e) {
     return;
   }
 
-  const cityInfo = await getGeo(input.value.trim());
+  const cityName = input.value.trim();
+  input.value = '';
+
+  const cityInfo = await getGeo(cityName);
 
   const weatherInfo = await getWeather(cityInfo[0]["lat"], cityInfo[0]["lon"]);
 
