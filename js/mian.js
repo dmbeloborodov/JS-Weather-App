@@ -3,9 +3,9 @@ const API_KEY = "ca4be9013bb6f2f5d76e0bfd85f072c5";
 const form = document.querySelector("#form");
 const input = document.querySelector(".form__input");
 
-form.onsubmit = submitHeander;
+form.onsubmit = submitHandler;
 
-async function submitHeander(e) {
+async function submitHandler(e) {
   e.preventDefault();
 
   if (!input.value.trim()) {
@@ -14,7 +14,7 @@ async function submitHeander(e) {
   }
 
   const cityName = input.value.trim();
-  input.value = '';
+  input.value = "";
 
   const cityInfo = await getGeo(cityName);
 
@@ -48,9 +48,8 @@ async function getWeather(lat, lon) {
 }
 
 function renderWeatherData(data) {
-
-  document.querySelector('.weather__info').classList.remove("none");
-  document.querySelector('.weather__details').classList.remove("none");
+  document.querySelector(".weather__info").classList.remove("none");
+  document.querySelector(".weather__details").classList.remove("none");
 
   const temp = document.querySelector(".weather__temp");
   const city = document.querySelector(".weather__city");
@@ -67,8 +66,9 @@ function renderWeatherData(data) {
     Clouds: "clouds",
     Clear: "clear",
     Rain: "rain",
-    Mist: 'mist',
-    Drizzle: 'drizzle'
+    Mist: "mist",
+    Drizzle: "drizzle",
+    Snow: "snow",
   };
 
   img.src = `./img/weather/${fileName[data.main]}.png`;
