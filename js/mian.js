@@ -15,8 +15,17 @@ async function submitHeander(e) {
 
   const cityInfo = await getGeo(input.value.trim());
 
-	const weatherInfo = await getWeather(cityInfo[0]["lat"], cityInfo[0]["lon"])
-	console.log(weatherInfo)
+  const weatherInfo = await getWeather(cityInfo[0]["lat"], cityInfo[0]["lon"]);
+
+  const weatherData = {
+    name: weatherInfo.name,
+    temp: weatherInfo.main.temp,
+    humidity: weatherInfo.main.humidity,
+    speed: weatherInfo.wind.speed,
+    main: weatherInfo.weather[0]["main"],
+  };
+
+  renderWeatherData(weatherData);
 }
 
 async function getGeo(name) {
@@ -31,4 +40,25 @@ async function getWeather(lat, lon) {
   const response = await fetch(weatherUrl);
   const data = await response.json();
   return data;
+}
+
+function renderWeatherData(data) {
+  const temp = document.querySelector(".weather__temp");
+  const city = document.querySelector(".weather__city");
+  const humidity = document.querySelector("#humidity");
+  const speed = document.querySelector("#speed");
+  const img = document.querySelector(".weather__img");
+
+  temp.innerText = Math.round(data.temp) + "ºc";
+  city.innerText = data.name;
+  humidity.innerText = data.humidity + "%";
+  speed.innerText = data.speed + " km/h";
+
+  const fileName = {
+    Clouds: "clouds",
+    Clear: "clear",
+    Rain: "rain",
+  };
+
+  img.src = `./img/weather/${fileName[data.main]}.png`;
 }
