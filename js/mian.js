@@ -61,6 +61,8 @@ function renderWeatherData(data) {
     Clouds: "clouds",
     Clear: "clear",
     Rain: "rain",
+    Mist: 'mist',
+    Drizzle: 'drizzle'
   };
 
   img.src = `./img/weather/${fileName[data.main]}.png`;
