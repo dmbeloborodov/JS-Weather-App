@@ -12,6 +12,10 @@ body {
   background-color: #282828;
 }
 
+.none {
+  display: none !important;
+}
+
 .weather {
   width: 320px;
   border-radius: 16px;

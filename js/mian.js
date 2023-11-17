@@ -18,6 +18,8 @@ async function submitHeander(e) {
 
   const cityInfo = await getGeo(cityName);
 
+  if (cityInfo.lenght === 0) return;
+
   const weatherInfo = await getWeather(cityInfo[0]["lat"], cityInfo[0]["lon"]);
 
   const weatherData = {
@@ -46,6 +48,10 @@ async function getWeather(lat, lon) {
 }
 
 function renderWeatherData(data) {
+
+  document.querySelector('.weather__info').classList.remove("none");
+  document.querySelector('.weather__details').classList.remove("none");
+
   const temp = document.querySelector(".weather__temp");
   const city = document.querySelector(".weather__city");
   const humidity = document.querySelector("#humidity");
